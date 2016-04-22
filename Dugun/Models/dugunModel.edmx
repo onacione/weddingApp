@@ -1,0 +1,981 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DUGUNModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="30" />
+          <Property Name="DtInsert" Type="datetime" />
+          <Property Name="DtUpdate" Type="datetime" />
+          <Property Name="RowSatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Dugun">
+          <Key>
+            <PropertyRef Name="DugunID" />
+          </Key>
+          <Property Name="DugunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DugunSalonuID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="StartTime" Type="time" Precision="7" />
+          <Property Name="EndTime" Type="time" Precision="7" />
+          <Property Name="PersonCount" Type="int" Nullable="false" />
+          <Property Name="DtInsert" Type="datetime" />
+          <Property Name="DtUpdate" Type="datetime" />
+          <Property Name="RowStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="DugunSalonu">
+          <Key>
+            <PropertyRef Name="DugunSalonuID" />
+          </Key>
+          <Property Name="DugunSalonuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Location" Type="nvarchar" MaxLength="200" />
+          <Property Name="TelNo" Type="numeric" Precision="11" Scale="11" />
+          <Property Name="DtInsert" Type="datetime" />
+          <Property Name="DtUpdate" Type="datetime" />
+          <Property Name="RowStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Guest">
+          <Key>
+            <PropertyRef Name="GuestID" />
+          </Key>
+          <Property Name="GuestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="30" />
+          <Property Name="TelNo" Type="numeric" Precision="11" Scale="11" />
+          <Property Name="State" Type="bit" />
+          <Property Name="Count" Type="int" />
+          <Property Name="Alcoholic" Type="bit" />
+          <Property Name="TableID" Type="int" />
+          <Property Name="DugunID" Type="int" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="ServiceID" Type="int" />
+          <Property Name="DtInsert" Type="datetime" />
+          <Property Name="DtUpdate" Type="datetime" />
+          <Property Name="RowStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="MessageID" />
+          </Key>
+          <Property Name="MessageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MessageText" Type="nchar" MaxLength="200" />
+          <Property Name="IsRead" Type="bit" Nullable="false" />
+          <Property Name="UserIDSender" Type="int" Nullable="false" />
+          <Property Name="UserIDReceiver" Type="int" Nullable="false" />
+          <Property Name="MessageType" Type="int" />
+          <Property Name="DtInsert" Type="datetime" />
+          <Property Name="DtUpdate" Type="datetime" />
+          <Property Name="RowStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Route">
+          <Key>
+            <PropertyRef Name="RouteID" />
+          </Key>
+          <Property Name="RouteID" Type="int" Nullable="false" />
+          <Property Name="Content" Type="nvarchar" MaxLength="200" />
+          <Property Name="DtInsert" Type="datetime" />
+          <Property Name="DtUpdate" Type="datetime" />
+          <Property Name="RowStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CaptainName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CaptainTelNo" Type="numeric" Precision="11" Scale="11" />
+          <Property Name="RouteID" Type="int" />
+          <Property Name="DugunID" Type="int" />
+          <Property Name="PersonCount" Type="int" />
+        </EntityType>
+        <EntityType Name="Sevice">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CaptainName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CaptainTelNo" Type="numeric" Precision="11" Scale="11" />
+          <Property Name="RouteID" Type="int" />
+          <Property Name="DugunID" Type="int" />
+          <Property Name="PersonCount" Type="int" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="TableID" />
+          </Key>
+          <Property Name="TableID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MasaNo" Type="int" Nullable="false" />
+          <Property Name="Count" Type="int" />
+          <Property Name="Alcoholic" Type="bit" />
+          <Property Name="DugunID" Type="int" Nullable="false" />
+          <Property Name="DtInsert" Type="datetime" />
+          <Property Name="DtUpdate" Type="datetime" />
+          <Property Name="RowStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserTypeID" Type="int" Nullable="false" />
+          <Property Name="DugunSalonuID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EMail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TelNo" Type="numeric" Precision="11" Scale="11" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="30" />
+          <Property Name="Password" Type="nvarchar" MaxLength="30" />
+          <Property Name="DtInsert" Type="datetime" />
+          <Property Name="DtUpdate" Type="datetime" />
+          <Property Name="RowStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="UserTypeID" />
+          </Key>
+          <Property Name="UserTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DtInsert" Type="datetime" />
+          <Property Name="DtUpdate" Type="datetime" />
+          <Property Name="RowStatus" Type="int" />
+        </EntityType>
+        <Association Name="fk_DugunMasa">
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="1" />
+          <End Role="Table" Type="Self.Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dugun">
+              <PropertyRef Name="DugunID" />
+            </Principal>
+            <Dependent Role="Table">
+              <PropertyRef Name="DugunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_DugunSalonu">
+          <End Role="DugunSalonu" Type="Self.DugunSalonu" Multiplicity="1" />
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DugunSalonu">
+              <PropertyRef Name="DugunSalonuID" />
+            </Principal>
+            <Dependent Role="Dugun">
+              <PropertyRef Name="DugunSalonuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_DugunSalonuUser">
+          <End Role="DugunSalonu" Type="Self.DugunSalonu" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DugunSalonu">
+              <PropertyRef Name="DugunSalonuID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="DugunSalonuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_GuestCategory">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Guest">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_GuestDugun">
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="0..1" />
+          <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dugun">
+              <PropertyRef Name="DugunID" />
+            </Principal>
+            <Dependent Role="Guest">
+              <PropertyRef Name="DugunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_GuestService">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ServiceID" />
+            </Principal>
+            <Dependent Role="Guest">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_GuestTable">
+          <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
+          <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Table">
+              <PropertyRef Name="TableID" />
+            </Principal>
+            <Dependent Role="Guest">
+              <PropertyRef Name="TableID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MessageUserReceiver">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Message" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="UserIDReceiver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MessageUserSender">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Message" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="UserIDSender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ServiceDugun">
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="0..1" />
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dugun">
+              <PropertyRef Name="DugunID" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="DugunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ServiceRoute">
+          <End Role="Route" Type="Self.Route" Multiplicity="0..1" />
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="RouteID" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="RouteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_SeviceDugun">
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="0..1" />
+          <End Role="Sevice" Type="Self.Sevice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dugun">
+              <PropertyRef Name="DugunID" />
+            </Principal>
+            <Dependent Role="Sevice">
+              <PropertyRef Name="DugunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_SeviceRoute">
+          <End Role="Route" Type="Self.Route" Multiplicity="0..1" />
+          <End Role="Sevice" Type="Self.Sevice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="RouteID" />
+            </Principal>
+            <Dependent Role="Sevice">
+              <PropertyRef Name="RouteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_UserTypeUser">
+          <End Role="UserType" Type="Self.UserType" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="UserTypeID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="UserTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DUGUNModelStoreContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dugun" EntityType="Self.Dugun" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DugunSalonu" EntityType="Self.DugunSalonu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Guest" EntityType="Self.Guest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Message" EntityType="Self.Message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Route" EntityType="Self.Route" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sevice" EntityType="Self.Sevice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_DugunMasa" Association="Self.fk_DugunMasa">
+            <End Role="Dugun" EntitySet="Dugun" />
+            <End Role="Table" EntitySet="Table" />
+          </AssociationSet>
+          <AssociationSet Name="fk_DugunSalonu" Association="Self.fk_DugunSalonu">
+            <End Role="DugunSalonu" EntitySet="DugunSalonu" />
+            <End Role="Dugun" EntitySet="Dugun" />
+          </AssociationSet>
+          <AssociationSet Name="fk_DugunSalonuUser" Association="Self.fk_DugunSalonuUser">
+            <End Role="DugunSalonu" EntitySet="DugunSalonu" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="fk_GuestCategory" Association="Self.fk_GuestCategory">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Guest" EntitySet="Guest" />
+          </AssociationSet>
+          <AssociationSet Name="fk_GuestDugun" Association="Self.fk_GuestDugun">
+            <End Role="Dugun" EntitySet="Dugun" />
+            <End Role="Guest" EntitySet="Guest" />
+          </AssociationSet>
+          <AssociationSet Name="fk_GuestService" Association="Self.fk_GuestService">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Guest" EntitySet="Guest" />
+          </AssociationSet>
+          <AssociationSet Name="fk_GuestTable" Association="Self.fk_GuestTable">
+            <End Role="Table" EntitySet="Table" />
+            <End Role="Guest" EntitySet="Guest" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MessageUserReceiver" Association="Self.fk_MessageUserReceiver">
+            <End Role="User" EntitySet="User" />
+            <End Role="Message" EntitySet="Message" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MessageUserSender" Association="Self.fk_MessageUserSender">
+            <End Role="User" EntitySet="User" />
+            <End Role="Message" EntitySet="Message" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ServiceDugun" Association="Self.fk_ServiceDugun">
+            <End Role="Dugun" EntitySet="Dugun" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ServiceRoute" Association="Self.fk_ServiceRoute">
+            <End Role="Route" EntitySet="Route" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+          <AssociationSet Name="fk_SeviceDugun" Association="Self.fk_SeviceDugun">
+            <End Role="Dugun" EntitySet="Dugun" />
+            <End Role="Sevice" EntitySet="Sevice" />
+          </AssociationSet>
+          <AssociationSet Name="fk_SeviceRoute" Association="Self.fk_SeviceRoute">
+            <End Role="Route" EntitySet="Route" />
+            <End Role="Sevice" EntitySet="Sevice" />
+          </AssociationSet>
+          <AssociationSet Name="fk_UserTypeUser" Association="Self.fk_UserTypeUser">
+            <End Role="UserType" EntitySet="UserType" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DUGUNModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DtInsert" Type="DateTime" Precision="3" />
+          <Property Name="DtUpdate" Type="DateTime" Precision="3" />
+          <Property Name="RowSatus" Type="Int32" />
+          <NavigationProperty Name="Guest" Relationship="Self.fk_GuestCategory" FromRole="Category" ToRole="Guest" />
+        </EntityType>
+        <EntityType Name="Dugun">
+          <Key>
+            <PropertyRef Name="DugunID" />
+          </Key>
+          <Property Name="DugunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DugunSalonuID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StartTime" Type="Time" Precision="7" />
+          <Property Name="EndTime" Type="Time" Precision="7" />
+          <Property Name="PersonCount" Type="Int32" Nullable="false" />
+          <Property Name="DtInsert" Type="DateTime" Precision="3" />
+          <Property Name="DtUpdate" Type="DateTime" Precision="3" />
+          <Property Name="RowStatus" Type="Int32" />
+          <NavigationProperty Name="Table" Relationship="Self.fk_DugunMasa" FromRole="Dugun" ToRole="Table" />
+          <NavigationProperty Name="DugunSalonu" Relationship="Self.fk_DugunSalonu" FromRole="Dugun" ToRole="DugunSalonu" />
+          <NavigationProperty Name="Guest" Relationship="Self.fk_GuestDugun" FromRole="Dugun" ToRole="Guest" />
+          <NavigationProperty Name="Service" Relationship="Self.fk_ServiceDugun" FromRole="Dugun" ToRole="Service" />
+          <NavigationProperty Name="Sevice" Relationship="Self.fk_SeviceDugun" FromRole="Dugun" ToRole="Sevice" />
+        </EntityType>
+        <EntityType Name="DugunSalonu">
+          <Key>
+            <PropertyRef Name="DugunSalonuID" />
+          </Key>
+          <Property Name="DugunSalonuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TelNo" Type="Decimal" Precision="11" Scale="11" />
+          <Property Name="DtInsert" Type="DateTime" Precision="3" />
+          <Property Name="DtUpdate" Type="DateTime" Precision="3" />
+          <Property Name="RowStatus" Type="Int32" />
+          <NavigationProperty Name="Dugun" Relationship="Self.fk_DugunSalonu" FromRole="DugunSalonu" ToRole="Dugun" />
+          <NavigationProperty Name="User" Relationship="Self.fk_DugunSalonuUser" FromRole="DugunSalonu" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Guest">
+          <Key>
+            <PropertyRef Name="GuestID" />
+          </Key>
+          <Property Name="GuestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TelNo" Type="Decimal" Precision="11" Scale="11" />
+          <Property Name="State" Type="Boolean" />
+          <Property Name="Count" Type="Int32" />
+          <Property Name="Alcoholic" Type="Boolean" />
+          <Property Name="TableID" Type="Int32" />
+          <Property Name="DugunID" Type="Int32" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="ServiceID" Type="Int32" />
+          <Property Name="DtInsert" Type="DateTime" Precision="3" />
+          <Property Name="DtUpdate" Type="DateTime" Precision="3" />
+          <Property Name="RowStatus" Type="Int32" />
+          <NavigationProperty Name="Category" Relationship="Self.fk_GuestCategory" FromRole="Guest" ToRole="Category" />
+          <NavigationProperty Name="Dugun" Relationship="Self.fk_GuestDugun" FromRole="Guest" ToRole="Dugun" />
+          <NavigationProperty Name="Service" Relationship="Self.fk_GuestService" FromRole="Guest" ToRole="Service" />
+          <NavigationProperty Name="Table" Relationship="Self.fk_GuestTable" FromRole="Guest" ToRole="Table" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="MessageID" />
+          </Key>
+          <Property Name="MessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MessageText" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <Property Name="IsRead" Type="Boolean" Nullable="false" />
+          <Property Name="UserIDSender" Type="Int32" Nullable="false" />
+          <Property Name="UserIDReceiver" Type="Int32" Nullable="false" />
+          <Property Name="MessageType" Type="Int32" />
+          <Property Name="DtInsert" Type="DateTime" Precision="3" />
+          <Property Name="DtUpdate" Type="DateTime" Precision="3" />
+          <Property Name="RowStatus" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.fk_MessageUserReceiver" FromRole="Message" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="Self.fk_MessageUserSender" FromRole="Message" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Route">
+          <Key>
+            <PropertyRef Name="RouteID" />
+          </Key>
+          <Property Name="RouteID" Type="Int32" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DtInsert" Type="DateTime" Precision="3" />
+          <Property Name="DtUpdate" Type="DateTime" Precision="3" />
+          <Property Name="RowStatus" Type="Int32" />
+          <NavigationProperty Name="Service" Relationship="Self.fk_ServiceRoute" FromRole="Route" ToRole="Service" />
+          <NavigationProperty Name="Sevice" Relationship="Self.fk_SeviceRoute" FromRole="Route" ToRole="Sevice" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaptainName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CaptainTelNo" Type="Decimal" Precision="11" Scale="11" />
+          <Property Name="RouteID" Type="Int32" />
+          <Property Name="DugunID" Type="Int32" />
+          <Property Name="PersonCount" Type="Int32" />
+          <NavigationProperty Name="Dugun" Relationship="Self.fk_ServiceDugun" FromRole="Service" ToRole="Dugun" />
+          <NavigationProperty Name="Guest" Relationship="Self.fk_GuestService" FromRole="Service" ToRole="Guest" />
+          <NavigationProperty Name="Route" Relationship="Self.fk_ServiceRoute" FromRole="Service" ToRole="Route" />
+        </EntityType>
+        <EntityType Name="Sevice">
+          <Key>
+            <PropertyRef Name="ServiceID" />
+          </Key>
+          <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CaptainName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CaptainTelNo" Type="Decimal" Precision="11" Scale="11" />
+          <Property Name="RouteID" Type="Int32" />
+          <Property Name="DugunID" Type="Int32" />
+          <Property Name="PersonCount" Type="Int32" />
+          <NavigationProperty Name="Dugun" Relationship="Self.fk_SeviceDugun" FromRole="Sevice" ToRole="Dugun" />
+          <NavigationProperty Name="Route" Relationship="Self.fk_SeviceRoute" FromRole="Sevice" ToRole="Route" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="TableID" />
+          </Key>
+          <Property Name="TableID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MasaNo" Type="Int32" Nullable="false" />
+          <Property Name="Count" Type="Int32" />
+          <Property Name="Alcoholic" Type="Boolean" />
+          <Property Name="DugunID" Type="Int32" Nullable="false" />
+          <Property Name="DtInsert" Type="DateTime" Precision="3" />
+          <Property Name="DtUpdate" Type="DateTime" Precision="3" />
+          <Property Name="RowStatus" Type="Int32" />
+          <NavigationProperty Name="Dugun" Relationship="Self.fk_DugunMasa" FromRole="Table" ToRole="Dugun" />
+          <NavigationProperty Name="Guest" Relationship="Self.fk_GuestTable" FromRole="Table" ToRole="Guest" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserTypeID" Type="Int32" Nullable="false" />
+          <Property Name="DugunSalonuID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TelNo" Type="Decimal" Precision="11" Scale="11" />
+          <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DtInsert" Type="DateTime" Precision="3" />
+          <Property Name="DtUpdate" Type="DateTime" Precision="3" />
+          <Property Name="RowStatus" Type="Int32" />
+          <NavigationProperty Name="DugunSalonu" Relationship="Self.fk_DugunSalonuUser" FromRole="User" ToRole="DugunSalonu" />
+          <NavigationProperty Name="Message" Relationship="Self.fk_MessageUserReceiver" FromRole="User" ToRole="Message" />
+          <NavigationProperty Name="Message1" Relationship="Self.fk_MessageUserSender" FromRole="User" ToRole="Message" />
+          <NavigationProperty Name="UserType" Relationship="Self.fk_UserTypeUser" FromRole="User" ToRole="UserType" />
+        </EntityType>
+        <EntityType Name="UserType">
+          <Key>
+            <PropertyRef Name="UserTypeID" />
+          </Key>
+          <Property Name="UserTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DtInsert" Type="DateTime" Precision="3" />
+          <Property Name="DtUpdate" Type="DateTime" Precision="3" />
+          <Property Name="RowStatus" Type="Int32" />
+          <NavigationProperty Name="User" Relationship="Self.fk_UserTypeUser" FromRole="UserType" ToRole="User" />
+        </EntityType>
+        <Association Name="fk_GuestCategory">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="Guest">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_DugunMasa">
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="1" />
+          <End Role="Table" Type="Self.Table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dugun">
+              <PropertyRef Name="DugunID" />
+            </Principal>
+            <Dependent Role="Table">
+              <PropertyRef Name="DugunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_DugunSalonu">
+          <End Role="DugunSalonu" Type="Self.DugunSalonu" Multiplicity="1" />
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DugunSalonu">
+              <PropertyRef Name="DugunSalonuID" />
+            </Principal>
+            <Dependent Role="Dugun">
+              <PropertyRef Name="DugunSalonuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_GuestDugun">
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="0..1" />
+          <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dugun">
+              <PropertyRef Name="DugunID" />
+            </Principal>
+            <Dependent Role="Guest">
+              <PropertyRef Name="DugunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ServiceDugun">
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="0..1" />
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dugun">
+              <PropertyRef Name="DugunID" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="DugunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_SeviceDugun">
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="0..1" />
+          <End Role="Sevice" Type="Self.Sevice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dugun">
+              <PropertyRef Name="DugunID" />
+            </Principal>
+            <Dependent Role="Sevice">
+              <PropertyRef Name="DugunID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_DugunSalonuUser">
+          <End Role="DugunSalonu" Type="Self.DugunSalonu" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DugunSalonu">
+              <PropertyRef Name="DugunSalonuID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="DugunSalonuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_GuestService">
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="ServiceID" />
+            </Principal>
+            <Dependent Role="Guest">
+              <PropertyRef Name="ServiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_GuestTable">
+          <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
+          <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Table">
+              <PropertyRef Name="TableID" />
+            </Principal>
+            <Dependent Role="Guest">
+              <PropertyRef Name="TableID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MessageUserReceiver">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Message" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="UserIDReceiver" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MessageUserSender">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Message" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="UserIDSender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ServiceRoute">
+          <End Role="Route" Type="Self.Route" Multiplicity="0..1" />
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="RouteID" />
+            </Principal>
+            <Dependent Role="Service">
+              <PropertyRef Name="RouteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_SeviceRoute">
+          <End Role="Route" Type="Self.Route" Multiplicity="0..1" />
+          <End Role="Sevice" Type="Self.Sevice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route">
+              <PropertyRef Name="RouteID" />
+            </Principal>
+            <Dependent Role="Sevice">
+              <PropertyRef Name="RouteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_UserTypeUser">
+          <End Role="UserType" Type="Self.UserType" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserType">
+              <PropertyRef Name="UserTypeID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="UserTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DugunEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Category" EntityType="Self.Category" />
+          <EntitySet Name="Dugun" EntityType="Self.Dugun" />
+          <EntitySet Name="DugunSalonu" EntityType="Self.DugunSalonu" />
+          <EntitySet Name="Guest" EntityType="Self.Guest" />
+          <EntitySet Name="Message" EntityType="Self.Message" />
+          <EntitySet Name="Route" EntityType="Self.Route" />
+          <EntitySet Name="Service" EntityType="Self.Service" />
+          <EntitySet Name="Sevice" EntityType="Self.Sevice" />
+          <EntitySet Name="Table" EntityType="Self.Table" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="UserType" EntityType="Self.UserType" />
+          <AssociationSet Name="fk_GuestCategory" Association="Self.fk_GuestCategory">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Guest" EntitySet="Guest" />
+          </AssociationSet>
+          <AssociationSet Name="fk_DugunMasa" Association="Self.fk_DugunMasa">
+            <End Role="Dugun" EntitySet="Dugun" />
+            <End Role="Table" EntitySet="Table" />
+          </AssociationSet>
+          <AssociationSet Name="fk_DugunSalonu" Association="Self.fk_DugunSalonu">
+            <End Role="DugunSalonu" EntitySet="DugunSalonu" />
+            <End Role="Dugun" EntitySet="Dugun" />
+          </AssociationSet>
+          <AssociationSet Name="fk_GuestDugun" Association="Self.fk_GuestDugun">
+            <End Role="Dugun" EntitySet="Dugun" />
+            <End Role="Guest" EntitySet="Guest" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ServiceDugun" Association="Self.fk_ServiceDugun">
+            <End Role="Dugun" EntitySet="Dugun" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+          <AssociationSet Name="fk_SeviceDugun" Association="Self.fk_SeviceDugun">
+            <End Role="Dugun" EntitySet="Dugun" />
+            <End Role="Sevice" EntitySet="Sevice" />
+          </AssociationSet>
+          <AssociationSet Name="fk_DugunSalonuUser" Association="Self.fk_DugunSalonuUser">
+            <End Role="DugunSalonu" EntitySet="DugunSalonu" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="fk_GuestService" Association="Self.fk_GuestService">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Guest" EntitySet="Guest" />
+          </AssociationSet>
+          <AssociationSet Name="fk_GuestTable" Association="Self.fk_GuestTable">
+            <End Role="Table" EntitySet="Table" />
+            <End Role="Guest" EntitySet="Guest" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MessageUserReceiver" Association="Self.fk_MessageUserReceiver">
+            <End Role="User" EntitySet="User" />
+            <End Role="Message" EntitySet="Message" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MessageUserSender" Association="Self.fk_MessageUserSender">
+            <End Role="User" EntitySet="User" />
+            <End Role="Message" EntitySet="Message" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ServiceRoute" Association="Self.fk_ServiceRoute">
+            <End Role="Route" EntitySet="Route" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+          <AssociationSet Name="fk_SeviceRoute" Association="Self.fk_SeviceRoute">
+            <End Role="Route" EntitySet="Route" />
+            <End Role="Sevice" EntitySet="Sevice" />
+          </AssociationSet>
+          <AssociationSet Name="fk_UserTypeUser" Association="Self.fk_UserTypeUser">
+            <End Role="UserType" EntitySet="UserType" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DUGUNModelStoreContainer" CdmEntityContainer="DugunEntities">
+          <EntitySetMapping Name="Category">
+            <EntityTypeMapping TypeName="DUGUNModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowSatus" ColumnName="RowSatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dugun">
+            <EntityTypeMapping TypeName="DUGUNModel.Dugun">
+              <MappingFragment StoreEntitySet="Dugun">
+                <ScalarProperty Name="DugunID" ColumnName="DugunID" />
+                <ScalarProperty Name="DugunSalonuID" ColumnName="DugunSalonuID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="PersonCount" ColumnName="PersonCount" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DugunSalonu">
+            <EntityTypeMapping TypeName="DUGUNModel.DugunSalonu">
+              <MappingFragment StoreEntitySet="DugunSalonu">
+                <ScalarProperty Name="DugunSalonuID" ColumnName="DugunSalonuID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Guest">
+            <EntityTypeMapping TypeName="DUGUNModel.Guest">
+              <MappingFragment StoreEntitySet="Guest">
+                <ScalarProperty Name="GuestID" ColumnName="GuestID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="Alcoholic" ColumnName="Alcoholic" />
+                <ScalarProperty Name="TableID" ColumnName="TableID" />
+                <ScalarProperty Name="DugunID" ColumnName="DugunID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Message">
+            <EntityTypeMapping TypeName="DUGUNModel.Message">
+              <MappingFragment StoreEntitySet="Message">
+                <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+                <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+                <ScalarProperty Name="UserIDSender" ColumnName="UserIDSender" />
+                <ScalarProperty Name="UserIDReceiver" ColumnName="UserIDReceiver" />
+                <ScalarProperty Name="MessageType" ColumnName="MessageType" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Route">
+            <EntityTypeMapping TypeName="DUGUNModel.Route">
+              <MappingFragment StoreEntitySet="Route">
+                <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Service">
+            <EntityTypeMapping TypeName="DUGUNModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="CaptainName" ColumnName="CaptainName" />
+                <ScalarProperty Name="CaptainTelNo" ColumnName="CaptainTelNo" />
+                <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+                <ScalarProperty Name="DugunID" ColumnName="DugunID" />
+                <ScalarProperty Name="PersonCount" ColumnName="PersonCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sevice">
+            <EntityTypeMapping TypeName="DUGUNModel.Sevice">
+              <MappingFragment StoreEntitySet="Sevice">
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="CaptainName" ColumnName="CaptainName" />
+                <ScalarProperty Name="CaptainTelNo" ColumnName="CaptainTelNo" />
+                <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+                <ScalarProperty Name="DugunID" ColumnName="DugunID" />
+                <ScalarProperty Name="PersonCount" ColumnName="PersonCount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Table">
+            <EntityTypeMapping TypeName="DUGUNModel.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="TableID" ColumnName="TableID" />
+                <ScalarProperty Name="MasaNo" ColumnName="MasaNo" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="Alcoholic" ColumnName="Alcoholic" />
+                <ScalarProperty Name="DugunID" ColumnName="DugunID" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="DUGUNModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+                <ScalarProperty Name="DugunSalonuID" ColumnName="DugunSalonuID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserType">
+            <EntityTypeMapping TypeName="DUGUNModel.UserType">
+              <MappingFragment StoreEntitySet="UserType">
+                <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+                <ScalarProperty Name="UserTypeName" ColumnName="UserTypeName" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

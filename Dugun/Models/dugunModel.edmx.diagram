@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5b9c530414704ebe8ac57ca3ba5264b1" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="DUGUNModel.Category" Width="1.5" PointX="6.625" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUGUNModel.Dugun" Width="1.5" PointX="7.5" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUGUNModel.DugunSalonu" Width="1.5" PointX="0.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUGUNModel.Guest" Width="1.5" PointX="12" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUGUNModel.Message" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUGUNModel.Route" Width="1.5" PointX="2.375" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUGUNModel.Service" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUGUNModel.Sevice" Width="1.5" PointX="9.625" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUGUNModel.Table" Width="1.5" PointX="9.125" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUGUNModel.User" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DUGUNModel.UserType" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <AssociationConnector Association="DUGUNModel.fk_GuestCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="DUGUNModel.fk_DugunMasa" ManuallyRouted="false" />
+        <AssociationConnector Association="DUGUNModel.fk_DugunSalonu" ManuallyRouted="false" />
+        <AssociationConnector Association="DUGUNModel.fk_GuestDugun" ManuallyRouted="false" />
+        <AssociationConnector Association="DUGUNModel.fk_ServiceDugun" ManuallyRouted="false" />
+        <AssociationConnector Association="DUGUNModel.fk_SeviceDugun" ManuallyRouted="false" />
+        <AssociationConnector Association="DUGUNModel.fk_DugunSalonuUser" ManuallyRouted="false" />
+        <AssociationConnector Association="DUGUNModel.fk_GuestService" ManuallyRouted="false" />
+        <AssociationConnector Association="DUGUNModel.fk_GuestTable" ManuallyRouted="false" />
+        <AssociationConnector Association="DUGUNModel.fk_MessageUserReceiver" ManuallyRouted="false" />
+        <AssociationConnector Association="DUGUNModel.fk_MessageUserSender" ManuallyRouted="false" />
+        <AssociationConnector Association="DUGUNModel.fk_ServiceRoute" ManuallyRouted="false" />
+        <AssociationConnector Association="DUGUNModel.fk_SeviceRoute" ManuallyRouted="false" />
+        <AssociationConnector Association="DUGUNModel.fk_UserTypeUser" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
