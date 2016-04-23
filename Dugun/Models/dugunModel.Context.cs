@@ -32,7 +32,6 @@ namespace Dugun.Models
         public virtual DbSet<Message> Message { get; set; }
         public virtual DbSet<Route> Route { get; set; }
         public virtual DbSet<Service> Service { get; set; }
-        public virtual DbSet<Sevice> Sevice { get; set; }
         public virtual DbSet<Table> Table { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<UserType> UserType { get; set; }

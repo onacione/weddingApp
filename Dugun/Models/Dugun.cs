@@ -17,9 +17,9 @@ namespace Dugun.Models
         public Dugun()
         {
             this.Table = new HashSet<Table>();
+            this.User = new HashSet<User>();
             this.Guest = new HashSet<Guest>();
             this.Service = new HashSet<Service>();
-            this.Sevice = new HashSet<Sevice>();
         }
     
         public int DugunID { get; set; }
@@ -35,8 +35,8 @@ namespace Dugun.Models
     
         public virtual ICollection<Table> Table { get; set; }
         public virtual DugunSalonu DugunSalonu { get; set; }
+        public virtual ICollection<User> User { get; set; }
         public virtual ICollection<Guest> Guest { get; set; }
         public virtual ICollection<Service> Service { get; set; }
-        public virtual ICollection<Sevice> Sevice { get; set; }
     }
 }

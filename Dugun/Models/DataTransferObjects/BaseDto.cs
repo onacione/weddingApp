@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Dugun.Models.DataTransferObjects;
 
 namespace Dugun.Models
 {
@@ -28,9 +29,9 @@ namespace Dugun.Models
         
         public Nullable<DateTime> DtUpdate { get; set; }
         public Nullable<int> RowStatus { get; set; }
+        public ErrorDto ErrorObject { get; set; }
 
         #endregion
-
       
     }
 }

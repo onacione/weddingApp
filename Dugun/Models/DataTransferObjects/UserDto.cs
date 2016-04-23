@@ -12,7 +12,8 @@ namespace Dugun.Models.DataTransferObjects
 
         public int UserID { get; set; }
         public int UserTypeID { get; set; }
-        public int DugunSalonuID { get; set; }
+        public Nullable<int> DugunSalonuID { get; set; }
+        public Nullable<int> DugunID { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string EMail { get; set; }
@@ -46,6 +47,7 @@ namespace Dugun.Models.DataTransferObjects
                 UserID = dto.UserID,
                 UserTypeID = dto.UserTypeID,
                 DugunSalonuID = dto.DugunSalonuID,
+                DugunID = dto.DugunID,
                 Name = dto.Name,
                 Surname = dto.Surname,
                 TelNo = dto.TelNo,
@@ -63,6 +65,7 @@ namespace Dugun.Models.DataTransferObjects
             this.UserID = entity.UserID;
             this.UserTypeID = entity.UserTypeID;
             this.DugunSalonuID = entity.DugunSalonuID;
+            this.DugunID = entity.DugunID;
             this.Surname = entity.Surname;
             this.TelNo = entity.TelNo;
             this.UserName = entity.UserName;

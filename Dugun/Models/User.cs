@@ -22,7 +22,8 @@ namespace Dugun.Models
     
         public int UserID { get; set; }
         public int UserTypeID { get; set; }
-        public int DugunSalonuID { get; set; }
+        public Nullable<int> DugunSalonuID { get; set; }
+        public Nullable<int> DugunID { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public string EMail { get; set; }
@@ -33,6 +34,7 @@ namespace Dugun.Models
         public Nullable<System.DateTime> DtUpdate { get; set; }
         public Nullable<int> RowStatus { get; set; }
     
+        public virtual Dugun Dugun { get; set; }
         public virtual DugunSalonu DugunSalonu { get; set; }
         public virtual ICollection<Message> Message { get; set; }
         public virtual ICollection<Message> Message1 { get; set; }

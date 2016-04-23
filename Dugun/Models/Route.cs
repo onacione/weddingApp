@@ -17,7 +17,6 @@ namespace Dugun.Models
         public Route()
         {
             this.Service = new HashSet<Service>();
-            this.Sevice = new HashSet<Sevice>();
         }
     
         public int RouteID { get; set; }
@@ -27,6 +26,5 @@ namespace Dugun.Models
         public Nullable<int> RowStatus { get; set; }
     
         public virtual ICollection<Service> Service { get; set; }
-        public virtual ICollection<Sevice> Sevice { get; set; }
     }
 }

@@ -23,7 +23,7 @@ namespace Dugun.Models
         public string CategoryName { get; set; }
         public Nullable<System.DateTime> DtInsert { get; set; }
         public Nullable<System.DateTime> DtUpdate { get; set; }
-        public Nullable<int> RowSatus { get; set; }
+        public Nullable<int> RowStatus { get; set; }
     
         public virtual ICollection<Guest> Guest { get; set; }
     }
