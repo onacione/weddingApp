@@ -20,6 +20,26 @@ namespace Dugun.Controllers
             return View();
         }
 
+        public ActionResult Guests()
+        {
+            return View();
+        }
+
+        public ActionResult Notes()
+        {
+            return View();
+        }
+
+        public ActionResult TableSettings()
+        {
+            return View();
+        }
+
+        public ActionResult Categories()
+        {
+            return View();
+        }
+
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
