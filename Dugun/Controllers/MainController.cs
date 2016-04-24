@@ -15,7 +15,7 @@ namespace Dugun.Controllers
 {
     public class MainController : Controller 
     {
-        DugunEntities _context = new DugunEntities();
+        dugunEntities _context = new dugunEntities();
 
         [OperationContract]
         [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "GetUser")]

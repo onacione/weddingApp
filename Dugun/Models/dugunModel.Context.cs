@@ -13,10 +13,10 @@ namespace Dugun.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DugunEntities : DbContext
+    public partial class dugunEntities : DbContext
     {
-        public DugunEntities()
-            : base("name=DugunEntities")
+        public dugunEntities()
+            : base("name=dugunEntities")
         {
         }
     

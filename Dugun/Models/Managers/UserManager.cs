@@ -30,7 +30,7 @@ namespace Dugun.Models.Managers
         }
         #endregion
 
-        public UserDto GetUser(int userID,  DugunEntities _context)
+        public UserDto GetUser(int userID, dugunEntities _context)
         {
             var entity = _context.User.FirstOrDefault(x => x.UserID == userID && x.RowStatus == (int)Enums.RowStatus.ACTIVE);
 
@@ -51,7 +51,7 @@ namespace Dugun.Models.Managers
                 return user;
         }
 
-        public UserDto SetUser(UserDto dto, DugunEntities _context)
+        public UserDto SetUser(UserDto dto, dugunEntities _context)
         {
             #region Server Validation
 

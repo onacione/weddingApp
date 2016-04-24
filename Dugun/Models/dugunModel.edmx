@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="DUGUNModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="nsibecom_DUGUNModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CategoryID" />
@@ -293,7 +293,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DUGUNModelStoreContainer">
+        <EntityContainer Name="nsibecom_DUGUNModelStoreContainer">
           <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dugun" EntityType="Self.Dugun" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DugunSalonu" EntityType="Self.DugunSalonu" Schema="dbo" store:Type="Tables" />
@@ -357,74 +357,11 @@
             <End Role="User" EntitySet="User" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DUGUNModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="DugunEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Category" EntityType="DUGUNModel.Category" />
-          <EntitySet Name="Dugun" EntityType="DUGUNModel.Dugun" />
-          <EntitySet Name="DugunSalonu" EntityType="DUGUNModel.DugunSalonu" />
-          <EntitySet Name="Guest" EntityType="DUGUNModel.Guest" />
-          <EntitySet Name="Message" EntityType="DUGUNModel.Message" />
-          <EntitySet Name="Route" EntityType="DUGUNModel.Route" />
-          <EntitySet Name="Service" EntityType="DUGUNModel.Service" />
-          <EntitySet Name="Table" EntityType="DUGUNModel.Table" />
-          <EntitySet Name="User" EntityType="DUGUNModel.User" />
-          <EntitySet Name="UserType" EntityType="DUGUNModel.UserType" />
-          <AssociationSet Name="fk_GuestCategory" Association="DUGUNModel.fk_GuestCategory">
-            <End Role="Category" EntitySet="Category" />
-            <End Role="Guest" EntitySet="Guest" />
-          </AssociationSet>
-          <AssociationSet Name="fk_DugunMasa" Association="DUGUNModel.fk_DugunMasa">
-            <End Role="Dugun" EntitySet="Dugun" />
-            <End Role="Table" EntitySet="Table" />
-          </AssociationSet>
-          <AssociationSet Name="fk_DugunSalonu" Association="DUGUNModel.fk_DugunSalonu">
-            <End Role="DugunSalonu" EntitySet="DugunSalonu" />
-            <End Role="Dugun" EntitySet="Dugun" />
-          </AssociationSet>
-          <AssociationSet Name="fk_DugunUser" Association="DUGUNModel.fk_DugunUser">
-            <End Role="Dugun" EntitySet="Dugun" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
-          <AssociationSet Name="fk_GuestDugun" Association="DUGUNModel.fk_GuestDugun">
-            <End Role="Dugun" EntitySet="Dugun" />
-            <End Role="Guest" EntitySet="Guest" />
-          </AssociationSet>
-          <AssociationSet Name="fk_ServiceDugun" Association="DUGUNModel.fk_ServiceDugun">
-            <End Role="Dugun" EntitySet="Dugun" />
-            <End Role="Service" EntitySet="Service" />
-          </AssociationSet>
-          <AssociationSet Name="fk_DugunSalonuUser" Association="DUGUNModel.fk_DugunSalonuUser">
-            <End Role="DugunSalonu" EntitySet="DugunSalonu" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
-          <AssociationSet Name="fk_GuestService" Association="DUGUNModel.fk_GuestService">
-            <End Role="Service" EntitySet="Service" />
-            <End Role="Guest" EntitySet="Guest" />
-          </AssociationSet>
-          <AssociationSet Name="fk_GuestTable" Association="DUGUNModel.fk_GuestTable">
-            <End Role="Table" EntitySet="Table" />
-            <End Role="Guest" EntitySet="Guest" />
-          </AssociationSet>
-          <AssociationSet Name="fk_MessageUserReceiver" Association="DUGUNModel.fk_MessageUserReceiver">
-            <End Role="User" EntitySet="User" />
-            <End Role="Message" EntitySet="Message" />
-          </AssociationSet>
-          <AssociationSet Name="fk_MessageUserSender" Association="DUGUNModel.fk_MessageUserSender">
-            <End Role="User" EntitySet="User" />
-            <End Role="Message" EntitySet="Message" />
-          </AssociationSet>
-          <AssociationSet Name="fk_ServiceRoute" Association="DUGUNModel.fk_ServiceRoute">
-            <End Role="Route" EntitySet="Route" />
-            <End Role="Service" EntitySet="Service" />
-          </AssociationSet>
-          <AssociationSet Name="fk_UserTypeUser" Association="DUGUNModel.fk_UserTypeUser">
-            <End Role="UserType" EntitySet="UserType" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
-        </EntityContainer>
+      <Schema Namespace="nsibecom_DUGUNModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Category">
           <Key>
             <PropertyRef Name="CategoryID" />
@@ -434,7 +371,7 @@
           <Property Name="DtInsert" Type="DateTime" Precision="3" />
           <Property Name="DtUpdate" Type="DateTime" Precision="3" />
           <Property Name="RowStatus" Type="Int32" />
-          <NavigationProperty Name="Guest" Relationship="DUGUNModel.fk_GuestCategory" FromRole="Category" ToRole="Guest" />
+          <NavigationProperty Name="Guest" Relationship="Self.fk_GuestCategory" FromRole="Category" ToRole="Guest" />
         </EntityType>
         <EntityType Name="Dugun">
           <Key>
@@ -442,7 +379,7 @@
           </Key>
           <Property Name="DugunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DugunSalonuID" Type="Int32" Nullable="false" />
-          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="StartTime" Type="Time" Precision="7" />
           <Property Name="EndTime" Type="Time" Precision="7" />
@@ -450,11 +387,11 @@
           <Property Name="DtInsert" Type="DateTime" Precision="3" />
           <Property Name="DtUpdate" Type="DateTime" Precision="3" />
           <Property Name="RowStatus" Type="Int32" />
-          <NavigationProperty Name="Table" Relationship="DUGUNModel.fk_DugunMasa" FromRole="Dugun" ToRole="Table" />
-          <NavigationProperty Name="DugunSalonu" Relationship="DUGUNModel.fk_DugunSalonu" FromRole="Dugun" ToRole="DugunSalonu" />
-          <NavigationProperty Name="User" Relationship="DUGUNModel.fk_DugunUser" FromRole="Dugun" ToRole="User" />
-          <NavigationProperty Name="Guest" Relationship="DUGUNModel.fk_GuestDugun" FromRole="Dugun" ToRole="Guest" />
-          <NavigationProperty Name="Service" Relationship="DUGUNModel.fk_ServiceDugun" FromRole="Dugun" ToRole="Service" />
+          <NavigationProperty Name="Table" Relationship="Self.fk_DugunMasa" FromRole="Dugun" ToRole="Table" />
+          <NavigationProperty Name="DugunSalonu" Relationship="Self.fk_DugunSalonu" FromRole="Dugun" ToRole="DugunSalonu" />
+          <NavigationProperty Name="User" Relationship="Self.fk_DugunUser" FromRole="Dugun" ToRole="User" />
+          <NavigationProperty Name="Guest" Relationship="Self.fk_GuestDugun" FromRole="Dugun" ToRole="Guest" />
+          <NavigationProperty Name="Service" Relationship="Self.fk_ServiceDugun" FromRole="Dugun" ToRole="Service" />
         </EntityType>
         <EntityType Name="DugunSalonu">
           <Key>
@@ -467,8 +404,8 @@
           <Property Name="DtInsert" Type="DateTime" Precision="3" />
           <Property Name="DtUpdate" Type="DateTime" Precision="3" />
           <Property Name="RowStatus" Type="Int32" />
-          <NavigationProperty Name="Dugun" Relationship="DUGUNModel.fk_DugunSalonu" FromRole="DugunSalonu" ToRole="Dugun" />
-          <NavigationProperty Name="User" Relationship="DUGUNModel.fk_DugunSalonuUser" FromRole="DugunSalonu" ToRole="User" />
+          <NavigationProperty Name="Dugun" Relationship="Self.fk_DugunSalonu" FromRole="DugunSalonu" ToRole="Dugun" />
+          <NavigationProperty Name="User" Relationship="Self.fk_DugunSalonuUser" FromRole="DugunSalonu" ToRole="User" />
         </EntityType>
         <EntityType Name="Guest">
           <Key>
@@ -488,10 +425,10 @@
           <Property Name="DtInsert" Type="DateTime" Precision="3" />
           <Property Name="DtUpdate" Type="DateTime" Precision="3" />
           <Property Name="RowStatus" Type="Int32" />
-          <NavigationProperty Name="Category" Relationship="DUGUNModel.fk_GuestCategory" FromRole="Guest" ToRole="Category" />
-          <NavigationProperty Name="Dugun" Relationship="DUGUNModel.fk_GuestDugun" FromRole="Guest" ToRole="Dugun" />
-          <NavigationProperty Name="Service" Relationship="DUGUNModel.fk_GuestService" FromRole="Guest" ToRole="Service" />
-          <NavigationProperty Name="Table" Relationship="DUGUNModel.fk_GuestTable" FromRole="Guest" ToRole="Table" />
+          <NavigationProperty Name="Category" Relationship="Self.fk_GuestCategory" FromRole="Guest" ToRole="Category" />
+          <NavigationProperty Name="Dugun" Relationship="Self.fk_GuestDugun" FromRole="Guest" ToRole="Dugun" />
+          <NavigationProperty Name="Service" Relationship="Self.fk_GuestService" FromRole="Guest" ToRole="Service" />
+          <NavigationProperty Name="Table" Relationship="Self.fk_GuestTable" FromRole="Guest" ToRole="Table" />
         </EntityType>
         <EntityType Name="Message">
           <Key>
@@ -506,8 +443,8 @@
           <Property Name="DtInsert" Type="DateTime" Precision="3" />
           <Property Name="DtUpdate" Type="DateTime" Precision="3" />
           <Property Name="RowStatus" Type="Int32" />
-          <NavigationProperty Name="User" Relationship="DUGUNModel.fk_MessageUserReceiver" FromRole="Message" ToRole="User" />
-          <NavigationProperty Name="User1" Relationship="DUGUNModel.fk_MessageUserSender" FromRole="Message" ToRole="User" />
+          <NavigationProperty Name="User" Relationship="Self.fk_MessageUserReceiver" FromRole="Message" ToRole="User" />
+          <NavigationProperty Name="User1" Relationship="Self.fk_MessageUserSender" FromRole="Message" ToRole="User" />
         </EntityType>
         <EntityType Name="Route">
           <Key>
@@ -518,7 +455,7 @@
           <Property Name="DtInsert" Type="DateTime" Precision="3" />
           <Property Name="DtUpdate" Type="DateTime" Precision="3" />
           <Property Name="RowStatus" Type="Int32" />
-          <NavigationProperty Name="Service" Relationship="DUGUNModel.fk_ServiceRoute" FromRole="Route" ToRole="Service" />
+          <NavigationProperty Name="Service" Relationship="Self.fk_ServiceRoute" FromRole="Route" ToRole="Service" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
@@ -530,9 +467,9 @@
           <Property Name="RouteID" Type="Int32" />
           <Property Name="DugunID" Type="Int32" />
           <Property Name="PersonCount" Type="Int32" />
-          <NavigationProperty Name="Dugun" Relationship="DUGUNModel.fk_ServiceDugun" FromRole="Service" ToRole="Dugun" />
-          <NavigationProperty Name="Guest" Relationship="DUGUNModel.fk_GuestService" FromRole="Service" ToRole="Guest" />
-          <NavigationProperty Name="Route" Relationship="DUGUNModel.fk_ServiceRoute" FromRole="Service" ToRole="Route" />
+          <NavigationProperty Name="Dugun" Relationship="Self.fk_ServiceDugun" FromRole="Service" ToRole="Dugun" />
+          <NavigationProperty Name="Guest" Relationship="Self.fk_GuestService" FromRole="Service" ToRole="Guest" />
+          <NavigationProperty Name="Route" Relationship="Self.fk_ServiceRoute" FromRole="Service" ToRole="Route" />
         </EntityType>
         <EntityType Name="Table">
           <Key>
@@ -546,8 +483,8 @@
           <Property Name="DtInsert" Type="DateTime" Precision="3" />
           <Property Name="DtUpdate" Type="DateTime" Precision="3" />
           <Property Name="RowStatus" Type="Int32" />
-          <NavigationProperty Name="Dugun" Relationship="DUGUNModel.fk_DugunMasa" FromRole="Table" ToRole="Dugun" />
-          <NavigationProperty Name="Guest" Relationship="DUGUNModel.fk_GuestTable" FromRole="Table" ToRole="Guest" />
+          <NavigationProperty Name="Dugun" Relationship="Self.fk_DugunMasa" FromRole="Table" ToRole="Dugun" />
+          <NavigationProperty Name="Guest" Relationship="Self.fk_GuestTable" FromRole="Table" ToRole="Guest" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -558,34 +495,34 @@
           <Property Name="DugunSalonuID" Type="Int32" />
           <Property Name="DugunID" Type="Int32" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="EMail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="TelNo" Type="Decimal" Precision="11" Scale="11" />
           <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="DtInsert" Type="DateTime" Precision="3" />
           <Property Name="DtUpdate" Type="DateTime" Precision="3" />
           <Property Name="RowStatus" Type="Int32" />
-          <NavigationProperty Name="Dugun" Relationship="DUGUNModel.fk_DugunUser" FromRole="User" ToRole="Dugun" />
-          <NavigationProperty Name="DugunSalonu" Relationship="DUGUNModel.fk_DugunSalonuUser" FromRole="User" ToRole="DugunSalonu" />
-          <NavigationProperty Name="Message" Relationship="DUGUNModel.fk_MessageUserReceiver" FromRole="User" ToRole="Message" />
-          <NavigationProperty Name="Message1" Relationship="DUGUNModel.fk_MessageUserSender" FromRole="User" ToRole="Message" />
-          <NavigationProperty Name="UserType" Relationship="DUGUNModel.fk_UserTypeUser" FromRole="User" ToRole="UserType" />
+          <NavigationProperty Name="Dugun" Relationship="Self.fk_DugunUser" FromRole="User" ToRole="Dugun" />
+          <NavigationProperty Name="DugunSalonu" Relationship="Self.fk_DugunSalonuUser" FromRole="User" ToRole="DugunSalonu" />
+          <NavigationProperty Name="Message" Relationship="Self.fk_MessageUserReceiver" FromRole="User" ToRole="Message" />
+          <NavigationProperty Name="Message1" Relationship="Self.fk_MessageUserSender" FromRole="User" ToRole="Message" />
+          <NavigationProperty Name="UserType" Relationship="Self.fk_UserTypeUser" FromRole="User" ToRole="UserType" />
         </EntityType>
         <EntityType Name="UserType">
           <Key>
             <PropertyRef Name="UserTypeID" />
           </Key>
           <Property Name="UserTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserTypeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DtInsert" Type="DateTime" Precision="3" />
           <Property Name="DtUpdate" Type="DateTime" Precision="3" />
           <Property Name="RowStatus" Type="Int32" />
-          <NavigationProperty Name="User" Relationship="DUGUNModel.fk_UserTypeUser" FromRole="UserType" ToRole="User" />
+          <NavigationProperty Name="User" Relationship="Self.fk_UserTypeUser" FromRole="UserType" ToRole="User" />
         </EntityType>
         <Association Name="fk_GuestCategory">
-          <End Type="DUGUNModel.Category" Role="Category" Multiplicity="0..1" />
-          <End Type="DUGUNModel.Guest" Role="Guest" Multiplicity="*" />
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Category">
               <PropertyRef Name="CategoryID" />
@@ -596,8 +533,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_DugunMasa">
-          <End Type="DUGUNModel.Dugun" Role="Dugun" Multiplicity="1" />
-          <End Type="DUGUNModel.Table" Role="Table" Multiplicity="*" />
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="1" />
+          <End Role="Table" Type="Self.Table" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Dugun">
               <PropertyRef Name="DugunID" />
@@ -608,8 +545,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_DugunSalonu">
-          <End Type="DUGUNModel.DugunSalonu" Role="DugunSalonu" Multiplicity="1" />
-          <End Type="DUGUNModel.Dugun" Role="Dugun" Multiplicity="*" />
+          <End Role="DugunSalonu" Type="Self.DugunSalonu" Multiplicity="1" />
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DugunSalonu">
               <PropertyRef Name="DugunSalonuID" />
@@ -620,8 +557,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_DugunUser">
-          <End Type="DUGUNModel.Dugun" Role="Dugun" Multiplicity="0..1" />
-          <End Type="DUGUNModel.User" Role="User" Multiplicity="*" />
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Dugun">
               <PropertyRef Name="DugunID" />
@@ -632,8 +569,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_GuestDugun">
-          <End Type="DUGUNModel.Dugun" Role="Dugun" Multiplicity="0..1" />
-          <End Type="DUGUNModel.Guest" Role="Guest" Multiplicity="*" />
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="0..1" />
+          <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Dugun">
               <PropertyRef Name="DugunID" />
@@ -644,8 +581,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_ServiceDugun">
-          <End Type="DUGUNModel.Dugun" Role="Dugun" Multiplicity="0..1" />
-          <End Type="DUGUNModel.Service" Role="Service" Multiplicity="*" />
+          <End Role="Dugun" Type="Self.Dugun" Multiplicity="0..1" />
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Dugun">
               <PropertyRef Name="DugunID" />
@@ -656,8 +593,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_DugunSalonuUser">
-          <End Type="DUGUNModel.DugunSalonu" Role="DugunSalonu" Multiplicity="0..1" />
-          <End Type="DUGUNModel.User" Role="User" Multiplicity="*" />
+          <End Role="DugunSalonu" Type="Self.DugunSalonu" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DugunSalonu">
               <PropertyRef Name="DugunSalonuID" />
@@ -668,8 +605,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_GuestService">
-          <End Type="DUGUNModel.Service" Role="Service" Multiplicity="0..1" />
-          <End Type="DUGUNModel.Guest" Role="Guest" Multiplicity="*" />
+          <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+          <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Service">
               <PropertyRef Name="ServiceID" />
@@ -680,8 +617,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_GuestTable">
-          <End Type="DUGUNModel.Table" Role="Table" Multiplicity="0..1" />
-          <End Type="DUGUNModel.Guest" Role="Guest" Multiplicity="*" />
+          <End Role="Table" Type="Self.Table" Multiplicity="0..1" />
+          <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Table">
               <PropertyRef Name="TableID" />
@@ -692,8 +629,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_MessageUserReceiver">
-          <End Type="DUGUNModel.User" Role="User" Multiplicity="1" />
-          <End Type="DUGUNModel.Message" Role="Message" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Message" Type="Self.Message" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="UserID" />
@@ -704,8 +641,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_MessageUserSender">
-          <End Type="DUGUNModel.User" Role="User" Multiplicity="1" />
-          <End Type="DUGUNModel.Message" Role="Message" Multiplicity="*" />
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Message" Type="Self.Message" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="UserID" />
@@ -716,8 +653,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_ServiceRoute">
-          <End Type="DUGUNModel.Route" Role="Route" Multiplicity="0..1" />
-          <End Type="DUGUNModel.Service" Role="Service" Multiplicity="*" />
+          <End Role="Route" Type="Self.Route" Multiplicity="0..1" />
+          <End Role="Service" Type="Self.Service" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Route">
               <PropertyRef Name="RouteID" />
@@ -728,8 +665,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_UserTypeUser">
-          <End Type="DUGUNModel.UserType" Role="UserType" Multiplicity="1" />
-          <End Type="DUGUNModel.User" Role="User" Multiplicity="*" />
+          <End Role="UserType" Type="Self.UserType" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="UserType">
               <PropertyRef Name="UserTypeID" />
@@ -739,151 +676,215 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        </Schema>
+        <EntityContainer Name="dugunEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Category" EntityType="Self.Category" />
+          <EntitySet Name="Dugun" EntityType="Self.Dugun" />
+          <EntitySet Name="DugunSalonu" EntityType="Self.DugunSalonu" />
+          <EntitySet Name="Guest" EntityType="Self.Guest" />
+          <EntitySet Name="Message" EntityType="Self.Message" />
+          <EntitySet Name="Route" EntityType="Self.Route" />
+          <EntitySet Name="Service" EntityType="Self.Service" />
+          <EntitySet Name="Table" EntityType="Self.Table" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="UserType" EntityType="Self.UserType" />
+          <AssociationSet Name="fk_GuestCategory" Association="Self.fk_GuestCategory">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Guest" EntitySet="Guest" />
+          </AssociationSet>
+          <AssociationSet Name="fk_DugunMasa" Association="Self.fk_DugunMasa">
+            <End Role="Dugun" EntitySet="Dugun" />
+            <End Role="Table" EntitySet="Table" />
+          </AssociationSet>
+          <AssociationSet Name="fk_DugunSalonu" Association="Self.fk_DugunSalonu">
+            <End Role="DugunSalonu" EntitySet="DugunSalonu" />
+            <End Role="Dugun" EntitySet="Dugun" />
+          </AssociationSet>
+          <AssociationSet Name="fk_DugunUser" Association="Self.fk_DugunUser">
+            <End Role="Dugun" EntitySet="Dugun" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="fk_GuestDugun" Association="Self.fk_GuestDugun">
+            <End Role="Dugun" EntitySet="Dugun" />
+            <End Role="Guest" EntitySet="Guest" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ServiceDugun" Association="Self.fk_ServiceDugun">
+            <End Role="Dugun" EntitySet="Dugun" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+          <AssociationSet Name="fk_DugunSalonuUser" Association="Self.fk_DugunSalonuUser">
+            <End Role="DugunSalonu" EntitySet="DugunSalonu" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="fk_GuestService" Association="Self.fk_GuestService">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Guest" EntitySet="Guest" />
+          </AssociationSet>
+          <AssociationSet Name="fk_GuestTable" Association="Self.fk_GuestTable">
+            <End Role="Table" EntitySet="Table" />
+            <End Role="Guest" EntitySet="Guest" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MessageUserReceiver" Association="Self.fk_MessageUserReceiver">
+            <End Role="User" EntitySet="User" />
+            <End Role="Message" EntitySet="Message" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MessageUserSender" Association="Self.fk_MessageUserSender">
+            <End Role="User" EntitySet="User" />
+            <End Role="Message" EntitySet="Message" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ServiceRoute" Association="Self.fk_ServiceRoute">
+            <End Role="Route" EntitySet="Route" />
+            <End Role="Service" EntitySet="Service" />
+          </AssociationSet>
+          <AssociationSet Name="fk_UserTypeUser" Association="Self.fk_UserTypeUser">
+            <End Role="UserType" EntitySet="UserType" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DUGUNModelStoreContainer" CdmEntityContainer="DugunEntities">
+        <EntityContainerMapping StorageEntityContainer="nsibecom_DUGUNModelStoreContainer" CdmEntityContainer="dugunEntities">
           <EntitySetMapping Name="Category">
-            <EntityTypeMapping TypeName="DUGUNModel.Category">
+            <EntityTypeMapping TypeName="nsibecom_DUGUNModel.Category">
               <MappingFragment StoreEntitySet="Category">
-                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
-                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
-                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
-                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Dugun">
-            <EntityTypeMapping TypeName="DUGUNModel.Dugun">
+            <EntityTypeMapping TypeName="nsibecom_DUGUNModel.Dugun">
               <MappingFragment StoreEntitySet="Dugun">
-                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
-                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
-                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
-                <ScalarProperty Name="PersonCount" ColumnName="PersonCount" />
-                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
-                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="DugunSalonuID" ColumnName="DugunSalonuID" />
                 <ScalarProperty Name="DugunID" ColumnName="DugunID" />
+                <ScalarProperty Name="DugunSalonuID" ColumnName="DugunSalonuID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="PersonCount" ColumnName="PersonCount" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DugunSalonu">
-            <EntityTypeMapping TypeName="DUGUNModel.DugunSalonu">
+            <EntityTypeMapping TypeName="nsibecom_DUGUNModel.DugunSalonu">
               <MappingFragment StoreEntitySet="DugunSalonu">
-                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
-                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
-                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
-                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="DugunSalonuID" ColumnName="DugunSalonuID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Guest">
-            <EntityTypeMapping TypeName="DUGUNModel.Guest">
+            <EntityTypeMapping TypeName="nsibecom_DUGUNModel.Guest">
               <MappingFragment StoreEntitySet="Guest">
-                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
-                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
-                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
-                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-                <ScalarProperty Name="DugunID" ColumnName="DugunID" />
-                <ScalarProperty Name="TableID" ColumnName="TableID" />
-                <ScalarProperty Name="Alcoholic" ColumnName="Alcoholic" />
-                <ScalarProperty Name="Count" ColumnName="Count" />
-                <ScalarProperty Name="State" ColumnName="State" />
-                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="GuestID" ColumnName="GuestID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="Alcoholic" ColumnName="Alcoholic" />
+                <ScalarProperty Name="TableID" ColumnName="TableID" />
+                <ScalarProperty Name="DugunID" ColumnName="DugunID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Message">
-            <EntityTypeMapping TypeName="DUGUNModel.Message">
+            <EntityTypeMapping TypeName="nsibecom_DUGUNModel.Message">
               <MappingFragment StoreEntitySet="Message">
-                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
-                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
-                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
-                <ScalarProperty Name="MessageType" ColumnName="MessageType" />
-                <ScalarProperty Name="UserIDReceiver" ColumnName="UserIDReceiver" />
-                <ScalarProperty Name="UserIDSender" ColumnName="UserIDSender" />
-                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
-                <ScalarProperty Name="MessageText" ColumnName="MessageText" />
                 <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+                <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+                <ScalarProperty Name="UserIDSender" ColumnName="UserIDSender" />
+                <ScalarProperty Name="UserIDReceiver" ColumnName="UserIDReceiver" />
+                <ScalarProperty Name="MessageType" ColumnName="MessageType" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Route">
-            <EntityTypeMapping TypeName="DUGUNModel.Route">
+            <EntityTypeMapping TypeName="nsibecom_DUGUNModel.Route">
               <MappingFragment StoreEntitySet="Route">
-                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
-                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
-                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
-                <ScalarProperty Name="Content" ColumnName="Content" />
                 <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Service">
-            <EntityTypeMapping TypeName="DUGUNModel.Service">
+            <EntityTypeMapping TypeName="nsibecom_DUGUNModel.Service">
               <MappingFragment StoreEntitySet="Service">
-                <ScalarProperty Name="PersonCount" ColumnName="PersonCount" />
-                <ScalarProperty Name="DugunID" ColumnName="DugunID" />
-                <ScalarProperty Name="RouteID" ColumnName="RouteID" />
-                <ScalarProperty Name="CaptainTelNo" ColumnName="CaptainTelNo" />
-                <ScalarProperty Name="CaptainName" ColumnName="CaptainName" />
                 <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+                <ScalarProperty Name="CaptainName" ColumnName="CaptainName" />
+                <ScalarProperty Name="CaptainTelNo" ColumnName="CaptainTelNo" />
+                <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+                <ScalarProperty Name="DugunID" ColumnName="DugunID" />
+                <ScalarProperty Name="PersonCount" ColumnName="PersonCount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Table">
-            <EntityTypeMapping TypeName="DUGUNModel.Table">
+            <EntityTypeMapping TypeName="nsibecom_DUGUNModel.Table">
               <MappingFragment StoreEntitySet="Table">
-                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
-                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
-                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
-                <ScalarProperty Name="DugunID" ColumnName="DugunID" />
-                <ScalarProperty Name="Alcoholic" ColumnName="Alcoholic" />
-                <ScalarProperty Name="Count" ColumnName="Count" />
-                <ScalarProperty Name="MasaNo" ColumnName="MasaNo" />
                 <ScalarProperty Name="TableID" ColumnName="TableID" />
+                <ScalarProperty Name="MasaNo" ColumnName="MasaNo" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="Alcoholic" ColumnName="Alcoholic" />
+                <ScalarProperty Name="DugunID" ColumnName="DugunID" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="DUGUNModel.User">
+            <EntityTypeMapping TypeName="nsibecom_DUGUNModel.User">
               <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
-                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
-                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
-                <ScalarProperty Name="EMail" ColumnName="EMail" />
-                <ScalarProperty Name="Surname" ColumnName="Surname" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="DugunID" ColumnName="DugunID" />
-                <ScalarProperty Name="DugunSalonuID" ColumnName="DugunSalonuID" />
-                <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+                <ScalarProperty Name="DugunSalonuID" ColumnName="DugunSalonuID" />
+                <ScalarProperty Name="DugunID" ColumnName="DugunID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserType">
-            <EntityTypeMapping TypeName="DUGUNModel.UserType">
+            <EntityTypeMapping TypeName="nsibecom_DUGUNModel.UserType">
               <MappingFragment StoreEntitySet="UserType">
-                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
-                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
-                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
-                <ScalarProperty Name="UserTypeName" ColumnName="UserTypeName" />
                 <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+                <ScalarProperty Name="UserTypeName" ColumnName="UserTypeName" />
+                <ScalarProperty Name="DtInsert" ColumnName="DtInsert" />
+                <ScalarProperty Name="DtUpdate" ColumnName="DtUpdate" />
+                <ScalarProperty Name="RowStatus" ColumnName="RowStatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

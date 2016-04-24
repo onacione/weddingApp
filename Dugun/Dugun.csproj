@@ -1225,23 +1225,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\dugunModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>dugunModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\dugunModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dugunModel.edmx</DependentUpon>
-      <LastGenOutput>dugunModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\dugunModel.edmx.diagram">
-      <DependentUpon>dugunModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\dugunModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>dugunModel.edmx</DependentUpon>
-      <LastGenOutput>dugunModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Content\css\.DS_Store" />
     <Content Include="Content\css\fonts\.DS_Store" />
     <Content Include="Content\css\fonts\elusive\.DS_Store" />
@@ -1554,6 +1537,23 @@
     <Content Include="Content\less\xenon-less\widgets.less" />
     <Content Include="Content\less\xenon-skins.less" />
     <Content Include="Content\less\xenon.less" />
+    <EntityDeploy Include="Models\dugunModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dugunModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\dugunModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dugunModel.edmx</DependentUpon>
+      <LastGenOutput>dugunModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\dugunModel.edmx.diagram">
+      <DependentUpon>dugunModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\dugunModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dugunModel.edmx</DependentUpon>
+      <LastGenOutput>dugunModel.cs</LastGenOutput>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
