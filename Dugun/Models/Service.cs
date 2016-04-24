@@ -25,6 +25,9 @@ namespace Dugun.Models
         public Nullable<int> RouteID { get; set; }
         public Nullable<int> DugunID { get; set; }
         public Nullable<int> PersonCount { get; set; }
+        public Nullable<System.DateTime> DtInsert { get; set; }
+        public Nullable<System.DateTime> DtUpdate { get; set; }
+        public Nullable<int> RowStatus { get; set; }
     
         public virtual Dugun Dugun { get; set; }
         public virtual ICollection<Guest> Guest { get; set; }

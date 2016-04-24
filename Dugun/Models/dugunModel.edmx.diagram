@@ -5,29 +5,29 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="c6b74ab8bae645c792070d3da7d5f9c9" Name="Diagram1">
-        <EntityTypeShape EntityType="nsibecom_DUGUNModel.Category" Width="1.5" PointX="5.25" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="nsibecom_DUGUNModel.Dugun" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="nsibecom_DUGUNModel.DugunSalonu" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="nsibecom_DUGUNModel.Guest" Width="1.5" PointX="7.5" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="nsibecom_DUGUNModel.Message" Width="1.5" PointX="10.5" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="nsibecom_DUGUNModel.Route" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="nsibecom_DUGUNModel.Service" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="nsibecom_DUGUNModel.Table" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="nsibecom_DUGUNModel.User" Width="1.5" PointX="8.25" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="nsibecom_DUGUNModel.UserType" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
-        <AssociationConnector Association="nsibecom_DUGUNModel.fk_GuestCategory" ManuallyRouted="false" />
-        <AssociationConnector Association="nsibecom_DUGUNModel.fk_DugunMasa" ManuallyRouted="false" />
-        <AssociationConnector Association="nsibecom_DUGUNModel.fk_DugunSalonu" ManuallyRouted="false" />
-        <AssociationConnector Association="nsibecom_DUGUNModel.fk_DugunUser" ManuallyRouted="false" />
-        <AssociationConnector Association="nsibecom_DUGUNModel.fk_GuestDugun" ManuallyRouted="false" />
-        <AssociationConnector Association="nsibecom_DUGUNModel.fk_ServiceDugun" ManuallyRouted="false" />
-        <AssociationConnector Association="nsibecom_DUGUNModel.fk_DugunSalonuUser" ManuallyRouted="false" />
-        <AssociationConnector Association="nsibecom_DUGUNModel.fk_GuestService" ManuallyRouted="false" />
-        <AssociationConnector Association="nsibecom_DUGUNModel.fk_GuestTable" ManuallyRouted="false" />
-        <AssociationConnector Association="nsibecom_DUGUNModel.fk_MessageUserReceiver" ManuallyRouted="false" />
-        <AssociationConnector Association="nsibecom_DUGUNModel.fk_MessageUserSender" ManuallyRouted="false" />
-        <AssociationConnector Association="nsibecom_DUGUNModel.fk_ServiceRoute" ManuallyRouted="false" />
-        <AssociationConnector Association="nsibecom_DUGUNModel.fk_UserTypeUser" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="nsibecom_DUGUNModel.Category" Width="1.5" PointX="8.25" PointY="14.75" />
+        <EntityTypeShape EntityType="nsibecom_DUGUNModel.Dugun" Width="1.5" PointX="3" PointY="6.5" />
+        <EntityTypeShape EntityType="nsibecom_DUGUNModel.DugunSalonu" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="nsibecom_DUGUNModel.Guest" Width="1.5" PointX="10.5" PointY="10.625" />
+        <EntityTypeShape EntityType="nsibecom_DUGUNModel.Message" Width="1.5" PointX="7.5" PointY="10.875" />
+        <EntityTypeShape EntityType="nsibecom_DUGUNModel.Route" Width="1.5" PointX="6" PointY="2.375" />
+        <EntityTypeShape EntityType="nsibecom_DUGUNModel.Service" Width="1.5" PointX="8.25" PointY="6.75" />
+        <EntityTypeShape EntityType="nsibecom_DUGUNModel.Table" Width="1.5" PointX="5.25" PointY="16.25" />
+        <EntityTypeShape EntityType="nsibecom_DUGUNModel.User" Width="1.5" PointX="5.25" PointY="6.125" />
+        <EntityTypeShape EntityType="nsibecom_DUGUNModel.UserType" Width="1.5" PointX="3" PointY="3.375" />
+        <AssociationConnector Association="nsibecom_DUGUNModel.fk_GuestCategory" />
+        <AssociationConnector Association="nsibecom_DUGUNModel.fk_DugunMasa" />
+        <AssociationConnector Association="nsibecom_DUGUNModel.fk_DugunSalonu" />
+        <AssociationConnector Association="nsibecom_DUGUNModel.fk_DugunUser" />
+        <AssociationConnector Association="nsibecom_DUGUNModel.fk_GuestDugun" />
+        <AssociationConnector Association="nsibecom_DUGUNModel.fk_ServiceDugun" />
+        <AssociationConnector Association="nsibecom_DUGUNModel.fk_DugunSalonuUser" />
+        <AssociationConnector Association="nsibecom_DUGUNModel.fk_GuestService" />
+        <AssociationConnector Association="nsibecom_DUGUNModel.fk_GuestTable" />
+        <AssociationConnector Association="nsibecom_DUGUNModel.fk_MessageUserReceiver" />
+        <AssociationConnector Association="nsibecom_DUGUNModel.fk_MessageUserSender" />
+        <AssociationConnector Association="nsibecom_DUGUNModel.fk_ServiceRoute" />
+        <AssociationConnector Association="nsibecom_DUGUNModel.fk_UserTypeUser" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

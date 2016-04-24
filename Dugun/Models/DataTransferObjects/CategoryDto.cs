@@ -8,7 +8,7 @@ namespace Dugun.Models.DataTransferObjects
 {
     public class CategoryDto : BaseDto
     {
-           #region Properties
+        #region Properties
 
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }

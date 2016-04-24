@@ -163,6 +163,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Common\Enums.cs" />
+    <Compile Include="Common\SessionControl.cs" />
     <Compile Include="Common\StringCipher.cs" />
     <Compile Include="Common\Utils.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -177,10 +178,14 @@
     </Compile>
     <Compile Include="Models\DataTransferObjects\BaseDto.cs" />
     <Compile Include="Models\DataTransferObjects\CategoryDto.cs" />
+    <Compile Include="Models\DataTransferObjects\DugunDto.cs" />
     <Compile Include="Models\DataTransferObjects\DugunSalonuDto.cs" />
     <Compile Include="Models\DataTransferObjects\ErrorDto.cs" />
+    <Compile Include="Models\DataTransferObjects\GuestDto.cs" />
     <Compile Include="Models\DataTransferObjects\MessageDto.cs" />
     <Compile Include="Models\DataTransferObjects\RouteDto.cs" />
+    <Compile Include="Models\DataTransferObjects\ServiceDto.cs" />
+    <Compile Include="Models\DataTransferObjects\TableDto.cs" />
     <Compile Include="Models\DataTransferObjects\UserDto.cs" />
     <Compile Include="Models\DataTransferObjects\UserTypeDto.cs" />
     <Compile Include="Models\Dugun.cs">
@@ -208,6 +213,7 @@
       <DependentUpon>dugunModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Managers\MessageManager.cs" />
     <Compile Include="Models\Managers\UserManager.cs" />
     <Compile Include="Models\Managers\UserTypeManager.cs" />
     <Compile Include="Models\Message.cs">
