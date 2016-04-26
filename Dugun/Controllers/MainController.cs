@@ -1,5 +1,7 @@
 ﻿using Dugun.Controllers;
 using Dugun.Models;
+using Dugun.Common;
+using Dugun.Models.DataService;
 using Dugun.Models.Managers;
 using Dugun.Models.DataTransferObjects;
 using System;
@@ -15,21 +17,13 @@ namespace Dugun.Controllers
 {
     public class MainController : Controller 
     {
-        dugunEntities _context = new dugunEntities();
 
-        [OperationContract]
-        [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "GetUser")]
-        public UserDto GetUser(int UserID)
-        {
-           return UserManager.Instance.GetUser(UserID, _context);
-        }
-
-        [OperationContract]
-        [WebInvoke(Method = "POST", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "SetUser")]
-        public UserDto SetUser(UserDto dto)
-        {
-            return UserManager.Instance.SetUser(dto, _context);
-        }
+       [OperationContract]
+       [WebInvoke(Method = "GET", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json, UriTemplate = "SetUser")]
+        public GuestDto SetGuest(GuestDto dto)
+       {
+           return Dispatcher.Invoke(() => GuestManager.Instance.SetGuest(dto, null), GuestManager.Instance) as GuestDto;
+       }
 
     }
 }

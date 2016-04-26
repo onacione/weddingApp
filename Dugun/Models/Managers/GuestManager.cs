@@ -11,6 +11,27 @@ namespace Dugun.Models.Managers
 {
     public class GuestManager
     {
+
+          #region Singleton Instance
+
+        private static GuestManager instance;
+
+        private GuestManager() { }
+
+        public static GuestManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new GuestManager();
+                }
+                return instance;
+            }
+        }
+        #endregion
+
+
         public GuestDto GetGuest(int GuestID, dugunEntities _context)
         {
             var entity = _context.Guest.FirstOrDefault(x => x.GuestID == GuestID && x.RowStatus == (int)Enums.RowStatus.ACTIVE);
