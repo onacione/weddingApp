@@ -11,7 +11,7 @@ var Services = {
             type: "POST",
             url: ui.ServiceUrl + "SetGuest",
             dataType: "json",
-            contentType: 'text/xml; charset=utf-8',
+            contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(dto),
             success: function (data) {
                 console.log("success");
