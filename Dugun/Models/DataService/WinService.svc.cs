@@ -48,7 +48,7 @@ namespace Dugun
 
         public GuestDto SetGuest(GuestDto dto)
         {
-            return Dispatcher.Invoke(() => GuestManager.Instance.SetGuest(dto, null), CategoryManager.Instance) as GuestDto;
+            return Dispatcher.Invoke(() => GuestManager.Instance.SetGuest(dto, null), GuestManager.Instance) as GuestDto;
         }
         #endregion
 
