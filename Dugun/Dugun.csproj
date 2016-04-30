@@ -340,6 +340,7 @@
     <Content Include="Content\images\logo-white-bg%402x.png" />
     <Content Include="Content\images\logo-white-bg.png" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\masaDuzeni.png" />
     <Content Include="Content\images\news-image-widget-2.png" />
     <Content Include="Content\images\news-image-widget-3.png" />
     <Content Include="Content\images\news-image-widget-4.png" />
