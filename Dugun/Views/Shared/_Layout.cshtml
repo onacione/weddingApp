@@ -23,8 +23,9 @@
     @RenderSection("css", required: false)
 </head>
 <body class="page-body">
-
+ 
     <div class="page-container">
+
         <div class="sidebar-menu toggle-others fixed">
 
             <div class="sidebar-menu-inner">
@@ -417,9 +418,10 @@
                 </ul>
 
             </nav>
-      
+         
+          
                 @RenderBody()
-            @RenderSection("center", required: false)
+            @RenderSection("center", required: false)   @RenderSection("modal", required: false)
             <footer class="main-footer sticky footer-type-1">
 
                 <div class="footer-inner">
@@ -433,6 +435,7 @@
                 </div>
 
             </footer>
+
         </div>
 
 
@@ -448,4 +451,5 @@
     <script src="@Url.Content("~/Content/js/xenon-custom.js" + Dugun.Common.Utils.VersionQuery)"></script>
   @RenderSection("script", required: false)
 </body>
+
 </html>

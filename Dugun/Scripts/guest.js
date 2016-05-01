@@ -14,12 +14,15 @@
               console.log("error");
           }
       });
-    },   
+ },
+ OpenEditModal: function (e) {
+     $('#setguestInfoModal').modal("show");
+ },
 
 };
 
 
 
 $(document).ready(function () {
-    guestFunctions.SetGuest();
+    
 });

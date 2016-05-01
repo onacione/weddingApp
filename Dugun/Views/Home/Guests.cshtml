@@ -61,7 +61,7 @@
                         <td>24</td>
                         <td>
     
-                            <a href="#" class="btn btn-secondary btn-sm btn-icon icon-left">
+                            <a href="#" class="btn btn-secondary btn-sm btn-icon icon-left"onclick="guestFunctions.OpenEditModal(0)">
                                 Düzenle
                             </a>
     
@@ -343,6 +343,93 @@
         </div>
     </div>
 }
+
+@section modal{
+<div class="modal fade" id="setguestInfoModal" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog giris">
+        <div class="modal-content">
+            <ul class="col-md-12 col-sm-12 col-xs-12" style="list-style:none;">
+                <li id="liLogin" data-id="form1">
+                    <form id="formEditUser" role="form">
+                        <div class="form-group modal-head">
+                            <h3 id="divModalName">Davetli Bilgileri Düzenleme Ekranı</h3>
+                        </div>
+                        <div class="form-group">
+                            <label>Ad:</label>
+                            <input id="userNameInfo" placeholder="Ad" name="guestName" maxlength="49" class="form-control" tabindex="2">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Soyad:</label>
+                            <input id="userNameInfo" placeholder="Soyad" name="gusetSurname" maxlength="49" class="form-control" tabindex="2">
+                        </div>
+                        <div class="form-group">
+                            <label>Telefon:</label>
+                            <input id="userTcInfo" placeholder="Telefon" name="userTel" data-mask="decimal" maxlength="11" class="form-control" tabindex="2">
+                        </div>
+                        <div class="form-group">
+                            <label>EMail Adresi:</label>
+                            <input id="userMailInfo" placeholder="EMail" name="userMailInfo" class="form-control" tabindex="2">
+                        </div>
+                        <div id="UnionTab" class="form-group">
+                            <label>Kategori:</label>  <label class="pull-right" id="defaultCategory">Kategori:</label>
+                            <select class="form-control" id="unionList2" name="unionList2" multiple>
+                                @*@foreach (var item in categories)
+                                {
+                                    <option id="unionTab" value="@item.CateoryID" onclick="listUserFunctions.UpdateUnionInfo('@item.Name','@item.CategoryID')">@item.Name</option>
+                                }*@
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Servis/Rota:</label>  <label class="pull-right" id="defaultCountry">Henüz Seçilmedi</label>
+                            <select class="form-control" id="listSeervices" name="listUserService" multiple></select>
+                        </div>
+                        <div>
+                            <button class="col-md-4 btn btn-red pull-right" type="button" tabindex="3" onclick="listUserFunctions.UpdateEditForm()">Geri Al</button>
+                            <button class="btn btn-blue btn-block pull-right" type="button" tabindex="3" onclick="listUserFunctions.SaveUserInfo()">Kaydet</button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="setNewRecordInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog giris">
+        <div class="modal-content">
+            <ul class="col-md-12 col-sm-12 col-xs-12">
+                <li style="list-style:none" id="liLogin" data-id="form1">
+                    <form id="formEditUser1" role="form">
+                        <div class="form-group modal-head">
+                            <h3 class="panel-title panel-title-n">Kullanıcı Bilgileri Düzenleme Ekranı</h3>
+                        </div>
+                        <div class="form-group">
+                            <label>Ad Soyad:</label>
+                            <input id="userNameInfo1" placeholder="Ad Soyad" name="userNameInfo1" class="form-control" tabindex="2"></input>
+                        </div>
+                        <div class="form-group">
+                            <label>TC Kimlik Numarası:</label>
+                            <input id="userTcInfo1" maxlength="11" placeholder="TCKN" name="userTcInfo1" data-mask="decimal" class="form-control" tabindex="2"></input>
+                        </div>
+                        <div class="form-group">
+                            <label>EMail Adresi:</label>
+                            <input id="userMailInfo1" placeholder="EMail" name="userMailInfo1" class="form-control" tabindex="2"></input>
+                        </div>
+
+                        <div>
+                            <button class="col-md-4 btn btn-red pull-left" onclick="listUserFunctions.UpdateEditForm1()">Geri Al</button>
+                            <button class="btn btn-blue col-md-6 pull-right" type="button" tabindex="3" onclick="listUserFunctions.SaveNewRecordInfo()">Kaydet</button>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+}
+
 
 @section script{
 
