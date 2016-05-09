@@ -41,7 +41,7 @@
                                     <button class="btn btn-icon btn-red"> <i class="fa-remove"></i> </button>
                                 </div>
                                 <div class="pull-right">
-                                    <button class="btn btn-icon btn-warning"> <i class="fa-wrench"></i> </button>
+                                    <button class="btn btn-icon btn-warning" onclick="jQuery('#modal-6').modal('show', {backdrop: 'static'});"> <i class="fa-pencil"></i> </button>
                                 </div>
                             </div> 
                             
@@ -64,7 +64,7 @@
                                     <button class="btn btn-icon btn-red" id="remove"> <i class="fa-remove"></i> </button>
                                 </div>
                                 <div class="pull-right">
-                                    <button class="btn btn-icon btn-warning"> <i class="fa-wrench"></i> </button>
+                                    <button class="btn btn-icon btn-warning" onclick="jQuery('#modal-6').modal('show', {backdrop: 'static'});"> <i class="fa-pencil"></i> </button>
                                 </div> 
                             </div> 
                         </div> 
@@ -85,7 +85,7 @@
                                     <button class="btn btn-icon btn-red"> <i class="fa-remove"></i> </button>
                                 </div>
                                 <div class="pull-right">
-                                    <button class="btn btn-icon btn-warning"> <i class="fa-wrench"></i> </button>
+                                    <button class="btn btn-icon btn-warning" onclick="jQuery('#modal-6').modal('show', {backdrop: 'static'});"> <i class="fa-pencil"></i> </button>
                                 </div> 
                             </div> 
                         </div> 
@@ -99,31 +99,64 @@
     </div>
 </div>
 
+
+
 <div class="row">
-    <div class="col-sm-12">
-        <h2>Yeni Not Ekle</h2>
-        <div class="panel panel-default">
+    <button class="btn btn-info btn-icon btn-icon-standalone btn-lg center-block" onclick="jQuery('#modal-7').modal('show', {backdrop: 'static'});"> <i class="fa-plus"></i> <span>Yeni Not Gir</span> </button>
+</div>
 
-            <div class="panel-body">
-
-                <form role="form" class="form-horizontal">
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label" for="field-5">İleteceğiniz metni girin</label>
-
-                        <div class="col-sm-7">
-                            <textarea class="form-control" cols="5" id="field-5"></textarea>
-                        </div>
-
-                        <div class="col-sm-3">
-                            <button class="btn btn-success">Kaydet</button>
+<div class="modal fade in" id="modal-6" aria-hidden="false" >
+    
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Not Güncelleme</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group no-margin">
+                            <label for="field-7" class="control-label">Not Adı</label>
+                            <textarea class="form-control autogrow" id="field-7" placeholder="Write something about yourself" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 50px;"></textarea>
                         </div>
                     </div>
-                </form>
-
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-info">Kaydet</button>
             </div>
         </div>
     </div>
 </div>
+
+<div class="modal fade in" id="modal-7" aria-hidden="false">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Yeni Not</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group no-margin">
+                            <label for="field-7" class="control-label">Yeni Not Adı </label>
+                            <textarea class="form-control autogrow" id="field-7" placeholder="Yeni Notunuzu Giriniz" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 50px;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-white" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-info">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 }
 
 @section script{
